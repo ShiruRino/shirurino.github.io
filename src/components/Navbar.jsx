@@ -1,9 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 export default function Navbar(){
+
     return(
         <>
+        <style>
+            {`
+            a.nav-link:hover{
+                text-decoration: underline;
+            }
+            `}
+        </style>
         <header className="sticky-top bg-light">
-            <nav className="container navbar navbar-expand-lg">
+            <nav className="container px-3 navbar navbar-expand-lg">
                 <div className="container-fluid d-flex align-items-center justify-content-between p-1">
                     <Link className="navbar-brand" to="/">Pojok JB</Link>
                     <div>
@@ -18,6 +26,9 @@ export default function Navbar(){
                             </li>
                             <li className="nav-item">
                             <NavLink className="nav-link" to="/aboutme" style={({isActive})=>isActive ? {textDecoration: 'underline'} : undefined}>About</NavLink>
+                            </li>
+                            <li className="nav-item">
+                            <NavLink className="nav-link" to="/projects" style={({isActive})=>isActive ? {textDecoration: 'underline'} : undefined}>Projects</NavLink>
                             </li>
                         </ul>
                         </div>
